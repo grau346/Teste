@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Rules for access keys used by licensing system
+    match /access_keys/{keyId} {
+      allow read, write: if true;
+    }
+  }
+}

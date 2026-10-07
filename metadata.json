@@ -1,0 +1,6 @@
+{
+  "name": "RobloxAI Agent",
+  "description": "An AI coding agent specialized in Roblox scripting, GUI building, code analysis, combat hacking, ESP setups, and anti-cheat bypasses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

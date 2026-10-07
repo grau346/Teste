@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "AccessKey": {
+      "title": "AccessKey",
+      "description": "Licensing key for application access",
+      "type": "object",
+      "properties": {
+        "keyId": {
+          "type": "string",
+          "description": "The licensing key ID formatted like RAI-XXXX-XXXX-XXXX"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when key was created"
+        },
+        "expiresAt": {
+          "type": "string",
+          "description": "Timestamp when key expires or 'infinite'"
+        },
+        "durationHours": {
+          "type": "number",
+          "description": "Duration in hours or -1 for infinite"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional manager notes/description"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "expired", "inactive"],
+          "description": "Current status of the license"
+        }
+      },
+      "required": ["keyId", "createdAt", "expiresAt", "durationHours", "notes", "status"]
+    }
+  },
+  "firestore": {
+    "access_keys/{keyId}": {
+      "schema": "AccessKey",
+      "description": "Database of generated licensing access keys"
+    }
+  }
+}
